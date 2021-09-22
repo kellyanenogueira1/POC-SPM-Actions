@@ -15,7 +15,8 @@
 		0BEDD20B26FBA78D00F24E04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEDD20926FBA78D00F24E04 /* LaunchScreen.storyboard */; };
 		0BEDD21626FBA78E00F24E04 /* POC_SPM_ActionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEDD21526FBA78E00F24E04 /* POC_SPM_ActionsTests.swift */; };
 		0BEDD22126FBA78E00F24E04 /* POC_SPM_ActionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEDD22026FBA78E00F24E04 /* POC_SPM_ActionsUITests.swift */; };
-		0BEDD23026FBA82000F24E04 /* Konboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEDD22F26FBA82000F24E04 /* Konboarding */; };
+		0BEDD23326FBB7C000F24E04 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEDD23226FBB7C000F24E04 /* RealmSwift */; };
+		0BEDD23526FBB7C000F24E04 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEDD23426FBB7C000F24E04 /* Realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BEDD23026FBA82000F24E04 /* Konboarding in Frameworks */,
+				0BEDD23526FBB7C000F24E04 /* Realm in Frameworks */,
+				0BEDD23326FBB7C000F24E04 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +149,8 @@
 			);
 			name = "POC-SPM-Actions";
 			packageProductDependencies = (
-				0BEDD22F26FBA82000F24E04 /* Konboarding */,
+				0BEDD23226FBB7C000F24E04 /* RealmSwift */,
+				0BEDD23426FBB7C000F24E04 /* Realm */,
 			);
 			productName = "POC-SPM-Actions";
 			productReference = 0BEDD1FB26FBA78B00F24E04 /* POC-SPM-Actions.app */;
@@ -221,7 +224,7 @@
 			);
 			mainGroup = 0BEDD1F226FBA78B00F24E04;
 			packageReferences = (
-				0BEDD22E26FBA82000F24E04 /* XCRemoteSwiftPackageReference "Konboarding" */,
+				0BEDD23126FBB7C000F24E04 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 0BEDD1FC26FBA78B00F24E04 /* Products */;
 			projectDirPath = "";
@@ -603,21 +606,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0BEDD22E26FBA82000F24E04 /* XCRemoteSwiftPackageReference "Konboarding" */ = {
+		0BEDD23126FBB7C000F24E04 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kellyanenogueira1/Konboarding.git";
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.15.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0BEDD22F26FBA82000F24E04 /* Konboarding */ = {
+		0BEDD23226FBB7C000F24E04 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0BEDD22E26FBA82000F24E04 /* XCRemoteSwiftPackageReference "Konboarding" */;
-			productName = Konboarding;
+			package = 0BEDD23126FBB7C000F24E04 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		0BEDD23426FBB7C000F24E04 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BEDD23126FBB7C000F24E04 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
