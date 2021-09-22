@@ -21,7 +21,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/cache@v2
+        
+      - name: Cache
+        uses: actions/cache@v2
       with:
         id: spm-cache
         path: .build
