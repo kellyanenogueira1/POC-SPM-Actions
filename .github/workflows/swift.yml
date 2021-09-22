@@ -33,7 +33,6 @@ jobs:
           
       - name: Build and Test
         run: |
-          if: steps.carthage-cache.outputs.cache-hit != 'true'
-          xcodebuild clean test -workspace POC-SPM-Actions.xcworkspace -scheme POC-SPM-Actions -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean test -project POC-SPM-Actions.xcodeproj -scheme POC-SPM-Actions -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
           destination: ${{ matrix.destination }}
