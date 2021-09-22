@@ -1,0 +1,37 @@
+name: Cache, Build & Test
+on:
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  test:
+    name: Cache, Build & Test
+    env:
+      SCHEME: "POC-SPM-Actions"
+      DEVICE: "iPhone 12"
+      DERIVED_DATA_PATH: "DerivedData"
+
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=14.4,name=iPhone 12']
+        
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v2
+      with:
+        id: spm-cache
+        path: .build
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+          
+      - name: Build and Test
+        if: steps.spm-cache.outputs.cache-hit != 'true'
+        run: |
+          xcodebuild clean test -workspace POC-SPM-Actions.xcworkspace -scheme POC-SPM-Actions -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+          destination: ${{ matrix.destination }}
