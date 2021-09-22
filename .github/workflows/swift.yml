@@ -31,4 +31,4 @@ jobs:
             ${{ runner.os }}-spm-
           
       - name: Build
-        run: xcodebuild clean test -workspace POC-SPM-Actions.xcworkspace -scheme POC-SPM-Actions -destination "platform=iOS Simulator,name=iPhone 11 Pro"
+        run: xcodebuild clean test -project POC-SPM-Actions.xcodeproj -scheme POC-SPM-Actions -destination "platform=iOS Simulator,name=iPhone 11 Pro"
