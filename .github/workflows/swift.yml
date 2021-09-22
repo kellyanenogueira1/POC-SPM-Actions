@@ -24,12 +24,12 @@ jobs:
         
       - name: Cache
         uses: actions/cache@v2
-      with:
-        id: spm-cache
-        path: .build
-        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
-        restore-keys: |
-          ${{ runner.os }}-spm-
+        with:
+          id: spm-cache
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
           
       - name: Build and Test
         if: steps.spm-cache.outputs.cache-hit != 'true'
