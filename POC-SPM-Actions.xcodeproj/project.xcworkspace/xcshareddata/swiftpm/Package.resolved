@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Konboarding",
+        "repositoryURL": "https://github.com/kellyanenogueira1/Konboarding.git",
+        "state": {
+          "branch": "main",
+          "revision": "5cca7850e02fa6c7f47f7d566fe86a77d06b47ab",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
